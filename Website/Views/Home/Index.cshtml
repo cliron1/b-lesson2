@@ -1,0 +1,23 @@
+﻿@using Website.Services;
+
+@model int
+@inject IConfiguration config
+@inject IMyService my
+@inject IWebHostEnvironment env
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    
+    <p>@my.Uid</p>
+    
+    <p>Port from Model (options): @Model</p>
+    
+    <p>@config["Custom:AppName"]</p>
+    
+    <p>@env.EnvironmentName</p>
+
+</div>
